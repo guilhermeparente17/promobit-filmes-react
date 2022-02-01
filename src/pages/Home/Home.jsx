@@ -1,5 +1,7 @@
 import React from 'react';
 import Categorias from '../../components/Categorias/Categorias';
+import Filmes from '../../components/Filmes/Filmes';
+import Footer from '../../components/Footer/Footer';
 import Header from '../../components/Header/Header';
 
 const Home = () => {
@@ -7,6 +9,8 @@ const Home = () => {
         <div>
             <Header />
             <Categorias />
+            <Filmes />
+            <Footer />
         </div>
     )
 };

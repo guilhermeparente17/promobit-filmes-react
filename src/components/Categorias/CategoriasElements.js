@@ -8,10 +8,14 @@ export const CategoriasContainer = styled.section`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 0px 10px;
 
     @media screen and (max-width: 700px){
-        height: 750px;
-        justify-content: flex-start;
+        height: 500px;
+    }
+
+    @media screen and (max-width: 500px){
+        height: 700px;
     }
     
 `
@@ -33,6 +37,7 @@ export const CategoriasSubtitle = styled.span`
     font-size: 14px;
     text-align: center;
     margin-top: 40px;
+    margin-bottom: 20px;
 `
 
 export const CategoriasMenu = styled.aside`

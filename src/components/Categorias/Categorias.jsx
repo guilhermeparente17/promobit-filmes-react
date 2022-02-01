@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import api from '../../api/api';
+import React from 'react';
+import AuthContext from '../../providers/auth';
 import GeneroItem from '../GeneroItem/GeneroItem';
 
 import {
@@ -10,31 +10,8 @@ import {
 } from './CategoriasElements'
 
 const Categorias = () => {
-    const [generos, setGeneros] = useState([])
-
-    let config = {
-        headers: {
-            'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzYjRmZDYzNjc0ZWE3NTQwZTk3ZWRlOTJjOWViYmFlNiIsInN1YiI6IjYxZjg1MTY2NWYyZGIxMDBhMmE4ZmVmOSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.VkuhKUSp2GflLyrwJ0DsGTcUkZ7kgO5VCBsrJ2FrSK0'
-        }
-    }
-
-    const getAllDataGenre = async () => {
-        try {
-            const response = await api.get('/genre/movie/list', config)
-            setGeneros(response.data)
-        } catch (error) {
-            console.log(error)
-        }
-    }
-
-    useEffect(() => {
-        getAllDataGenre()
-    }, [])
-
-    const genres = generos.genres
-
-    console.log(genres)
-
+    const context = React.useContext(AuthContext)
+    const genres = context.generos.genres
 
     return (
         <div>

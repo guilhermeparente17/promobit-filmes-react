@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const GeneroContainer = styled.div`
-    width: 130px;
+    padding: 0px 10px;
     height: 40px;
     border-radius: 4px;
     background-color: #FFF;
@@ -9,7 +9,6 @@ export const GeneroContainer = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px;
     flex-wrap: wrap;
     cursor: pointer;
 `
