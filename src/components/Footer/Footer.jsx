@@ -10,7 +10,6 @@ import {
 
 const Footer = () => {
     const context = React.useContext(AuthContext)
-    console.log(context)
     const setPagina = context.setPagina
     const pagina = context.pagina
     return (
@@ -23,7 +22,7 @@ const Footer = () => {
                 <FooterItem onClick={() => setPagina(5)}>5</FooterItem>
                 <FooterItem onClick={() => setPagina(pagina + 1)}><ChevronRight size="20" /></FooterItem>
                 <FooterItem>Página: {pagina}</FooterItem>
-                <FooterItem onClick={() => setPagina(pagina + 1)}>Ultima</FooterItem>
+                <FooterItem onClick={() => setPagina()}>Ultima</FooterItem>
             </FooterPages>
         </FooterContainer>
     )

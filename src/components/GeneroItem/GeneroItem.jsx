@@ -5,8 +5,8 @@ import {
     GeneroName
 } from './GeneroItemElements'
 
-const GeneroItem = ({ genre }) => {
-    const [isOpen, setIsOpen] = useState(false)
+const GeneroItem = ({ genre, tipoGenero, setTipoGenero, Task, handleTipoGenero }) => {
+    const [isSelect, setIsSelect] = useState(false)
     let genero
     if (genre.name === 'Action') {
         genero = 'Ação'
@@ -84,15 +84,17 @@ const GeneroItem = ({ genre }) => {
         genero = "Ocidental"
     }
 
+
+
     return (
         <GeneroContainer
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => handleTipoGenero(genre.id, isSelect, setIsSelect)}
             style={{
-                backgroundColor: isOpen ? '#D18000' : '#FFF',
+                backgroundColor: isSelect ? '#D18000' : '#FFF',
             }}
         >
-            <GeneroName style={{ color: isOpen ? '#FFF' : '#000' }}>
-                {genero} {isOpen && <XCircle size="18" style={{ color: '#FFF', margin: '0px 5px' }} />}
+            <GeneroName style={{ color: isSelect ? '#FFF' : '#000' }}>
+                {genero} {isSelect && <XCircle size="18" style={{ color: '#FFF', margin: '0px 5px' }} />}
             </GeneroName>
         </GeneroContainer>
     )

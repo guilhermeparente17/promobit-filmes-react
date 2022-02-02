@@ -8,8 +8,8 @@ import {
 
 const Filmes = () => {
     const filmes = React.useContext(AuthContext)
-    console.log(filmes.filmes.results)
-    const allMovies = filmes.filmes.results
+    const allMovies = filmes.filmes
+    const filteredData = filmes.filteredData
 
 
     return (

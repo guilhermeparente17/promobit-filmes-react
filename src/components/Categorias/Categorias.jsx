@@ -12,6 +12,10 @@ import {
 const Categorias = () => {
     const context = React.useContext(AuthContext)
     const genres = context.generos.genres
+    const tipoGenero = context.tipoGenero
+    const setTipoGenero = context.setTipoGenero
+    const Task = context.Task
+    const { isOpen, setIsOpen, handleTipoGenero } = context
 
     return (
         <div>
@@ -22,7 +26,16 @@ const Categorias = () => {
                 <CategoriasMenu>
                     {
                         genres && genres.map((genre, idx) => {
-                            return <GeneroItem key={genre.id} genre={genre} />
+                            return <GeneroItem
+                                key={genre.id}
+                                genre={genre}
+                                tipoGenero={tipoGenero}
+                                setTipoGenero={setTipoGenero}
+                                Task={Task}
+                                handleTipoGenero={handleTipoGenero}
+                                setIsOpen={setIsOpen}
+                                isOpen={isOpen}
+                            />
                         })
                     }
                 </CategoriasMenu>
