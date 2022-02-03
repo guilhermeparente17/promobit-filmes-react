@@ -26,7 +26,6 @@ export const AuthProvider = props => {
             try {
                 const response = await api.get(`/movie/popular?page=${pagina}`, config)
                 setFilmes(response.data.results)
-                setGenreType(response.data.results.map(genero => genero.genre_ids))
             } catch (error) {
                 console.log(error)
             }
@@ -59,13 +58,8 @@ export const AuthProvider = props => {
             setCategories(newCategoriesArr)
         }
 
-        console.log(categories)
         setIsOpen(!isOpen)
     }
-
-    // console.log(generos)
-    console.log(filmes)
-    console.log(genreType)
 
     useEffect(() => {
         let filteredMovies = [];
@@ -85,7 +79,8 @@ export const AuthProvider = props => {
               });
             });
 
-            console.log({ filteredMovies });
+            // console.log({ filteredMovies });
+            setFilteredData(filteredMovies)
         
     }, [categories])
 
@@ -125,7 +120,8 @@ export const AuthProvider = props => {
             tipoGenero, 
             setTipoGenero,
             handleTipoGenero,
-            filteredData
+            filteredData,
+            categories
         }} >
             {props.children}
         </AuthContext.Provider>

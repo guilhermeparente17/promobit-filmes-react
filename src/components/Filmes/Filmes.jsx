@@ -7,17 +7,19 @@ import {
 } from './FilmesElements'
 
 const Filmes = () => {
-    const filmes = React.useContext(AuthContext)
-    const allMovies = filmes.filmes
-    const filteredData = filmes.filteredData
-
+    const context = React.useContext(AuthContext)
+    const { filmes, filteredData, categories } = context
 
     return (
         <FilmesContainer>
             {
-                allMovies && allMovies.map((movie, idx) => {
-                    return <FilmesItem movie={movie} key={movie.id} />
-                })
+                categories.length > 0
+                    ? filteredData.map((movie, idx) => {
+                        return <FilmesItem movie={movie} key={movie.id} />
+                    })
+                    : filmes.map((movie, idx) => {
+                        return <FilmesItem movie={movie} key={movie.id} />
+                    })
             }
         </FilmesContainer>
     )
