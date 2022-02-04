@@ -84,32 +84,6 @@ export const AuthProvider = props => {
         
     }, [categories])
 
-    // useEffect(() => {
-    //     const filteredNovies = () => {
-    //         for(let i=0; i <= genreType.length; i++){
-    //             for(let j = 0; j <= genreType[i]?.length; j++){
-    //                 if(genreType[i] === categories[j])
-    //             }
-    //         }
-            
-    //     }
-        
-
-    //     filteredNovies()
-    // }, [categories])
-    
-    // console.log(tipoGenero)
-    
-    // console.log(tipoGenero)
-
-    // useEffect(() => {
-    //     // let filteredMovies = filmes?.results?.genre_ids && filmes.results.genre_ids.filter(movie => Task.includes(movie))
-    //     let filteredMovies = filmes?.results && filmes.results.map(item => item.genre_ids.filter(element => categories.includes(element)))
-    //     setFilteredData(filteredMovies)
-    //     console.log(filteredData)
-        
-    // }, [categories])
-
     return (
         <AuthContext.Provider value={{ 
             generos, 
